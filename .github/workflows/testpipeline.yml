@@ -1,22 +1,12 @@
 name: Automated API tests using Postman CLI
 
-on: workflow_dispatch
+on: push
 
 jobs:
   automated-api-tests:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Configure npm authentication
-        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.ACCESS_TOKEN }}" >> .npmrc 
-      - name: Install dependencies
-        run: npm install server/package.json
-      - name: Start server
-        run: npm install nodemon -g && nodemon server.js &
-        # Install nodemon globally and run the server using nodemon
-      - name: Wait for server to start
-        run: sleep 5
-        # Wait for 5 seconds for the server to start up
       - name: Install Postman CLI
         run: |
           curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
