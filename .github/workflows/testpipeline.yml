@@ -6,7 +6,15 @@ jobs:
   automated-api-tests:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm install
+      - name: Start server
+        run: npm install nodemon -g && nodemon server.js &
+        # Install nodemon globally and run the server using nodemon
+      - name: Wait for server to start
+        run: sleep 5
+        # Wait for 5 seconds for the server to start up
       - name: Install Postman CLI
         run: |
           curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
