@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install dependencies
-        run: npm install
+        run: npm install server/package.json
       - name: Start server
         run: npm install nodemon -g && nodemon server.js &
         # Install nodemon globally and run the server using nodemon
