@@ -1,6 +1,6 @@
 name: Automated API tests using Postman CLI
 
-on: push 
+on: push
         
 jobs:
   automated-api-tests:
@@ -10,13 +10,13 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-            node-version: '16.x'
+          node-version: '16.x'
       - name: Configure npm authentication
-        run:  "//npm.pkg.github.com/:_authToken=${{ secrets.ACCESS_TOKEN }}" >> .npmrc 
+        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.ACCESS_TOKEN }}" >> .npmrc 
       - name: Install dependencies
-        run: npm install server/package.json
+        run: npm install --prefix server
       - name: Start server
-        run:  npm install nodemon -g && nodemon server.js &
+        run:  npm install nodemon -g && nodemon server/server.js &
         # Install nodemon globally and run the server using nodemon
       - name: Wait for server to start
         run: sleep 5
