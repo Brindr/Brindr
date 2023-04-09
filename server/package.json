@@ -1,15 +1,12 @@
 {
-  "name": "brindirserver",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start:backend": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Enes Yarali",
-  "license": "ISC",
-  "dependencies": {
+  
+    "name": "@brindr/server",
+    "version": "1.0.0",
+    "description": "Server app that uses the brindr/server package",
+    "main": "index.js",
+    "author": "Enes Yarali",
+    "license": "MIT",
+    "dependencies": {
     "babel": "^6.23.0",
     "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
@@ -20,5 +17,8 @@
     "mongoose": "^7.0.0",
     "nodemon": "^2.0.21",
     "uuid": "^9.0.0"
-  }
+    }
+
+
+
 }
