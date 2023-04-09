@@ -14,7 +14,7 @@ jobs:
       - name: Configure npm authentication
         run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.ACCESS_TOKEN }}" >> .npmrc 
       - name: Install dependencies
-        run: npm install server/package.json
+        run: npm install @Brindr/Brindr/server/package.json
       - name: Start server
         run: npm install nodemon -g && nodemon server.js &
         # Install nodemon globally and run the server using nodemon
